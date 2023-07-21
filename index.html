@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raktdaan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<!--latest version of font-awesome doesnot work here-->
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="Images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">LOGIN</a></li>
+                    <li><a href="">DONATE</a></li>
+                    <li><a href="">RECIEVER</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1> Blood Donation </h1>
+            <p> Welcome to our blood donation website!<br> 
+                Our platform is dedicated to connecting blood donors<br>
+                with individuals in need of blood transfusions. Below is a detailed<br> 
+                description of the various features and functionalities you can find on our website.
+            </p>
+            <a href="" class="hero-btn">Click here to Know More</a>
+        </div>
+    </section>
+
+    <!--Our services section-->
+    <section class="service">
+        <h1>Services </h1>
+        <p>Blood donation is necessary for several crucial reasons, and it plays a vital role in maintaining public health and saving lives.</p>
+
+        <div class="row">
+            <div class="service-col">
+                <h3>Donate</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Sed non risus. Suspendisse lectus tortor, <br>dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. <br>Maecenas ligula massa, varius a, semper congue, euismod non, mi. <br>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. <br>Duis semper. </p>
+            </div>
+            <div class="service-col">
+                <h3>Recieve</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Sed non risus. Suspendisse lectus tortor, <br>dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. <br>Maecenas ligula massa, varius a, semper congue, euismod non, mi. <br>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. <br>Duis semper. </p>
+            </div>
+            <div class="service-col">
+                <h3>Consultancy</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Sed non risus. Suspendisse lectus tortor, <br>dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. <br>Maecenas ligula massa, varius a, semper congue, euismod non, mi. <br>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. <br>Duis semper. </p>
+            </div>
+        </div>
+
+    </section>
+
+<!--Blood donation centres section-->
+    <section class="location">
+        <h1>Our Blood donation centres</h1>
+        <p>Currently we are based in Durgapur city itself. Here are some of the blood donations centre in Durgapur </p>
+        <div class="row">
+            <div class="location-col">
+                <img src="Images/dspblood.jpeg">
+                <div class="layer">
+                    <h3>DSP Blood Donation Bank</h3>
+                </div>
+            </div>
+            <div class="location-col">
+                <img src="Images/Bidhannagar.jpeg">
+                <div class="layer">
+                    <h3>Bidhannagar Subdivisional Blood bank</h3>
+                </div>
+            </div>
+            <div class="location-col">
+                <img src="Images/missionhospital.jpeg">
+                <div class="layer">
+                    <h3>The Mission Hospital Blood Bank</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Contact us section-->
+    <section class="contact">
+        <h1>For more details </h1>
+        <a href="" class="hero-btn">CONTACT US</a>
+    </section>
+
+
+<!--footer section-->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>We are the students of Dr. B. C. Roy Engineering College<br> Academy of Professional Courses<br> BCA Dept. 5th SEM</p>
+        <p> Anindita Gope<br> konkana Tapader<br> Priti Sikdar<br> Priyanka Garai<br> Sanjib Mukherjee</p>
+        <div class="icons">
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-github"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        
+    </section>
+
+
+
+
+
+
+
+
+<!--JavaScript toggle menu for smaller devices-->
+    <script>                                                                 
+        var navLinks= document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+
+    </script>
+
+</body>
+</html>
