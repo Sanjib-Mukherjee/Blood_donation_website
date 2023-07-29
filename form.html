@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+}
+input[type=text], input[type=password], input[type=int] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #FDCEDF;
+}
+hr {
+  border: 1px solid #FDCEDF;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #DF2E38;
+  color: white;
+  ransform: translate(-50%, -50%);
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  }
+input[type=radio] {
+  padding: 10px 40px;
+  margin: 5px;
+  margin-right: 15px; 
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <h1>Blood Donation Form</h1>
+    <hr>
+    <label for="name"><b>Full Name</b></label><br>
+    <input type="text" placeholder="Enter Full Name" name="name" id="name" required><br>
+
+     <label for="age"><b>Age</b></label><br>
+     <input type="int" placeholder="Enter your Age" id="age" name="age" required> 
+     <br><br>
+
+    <label for="blood"><b>What is your blood type?</b></label><br>
+     <table class="blood-type">
+    <tr> <td>  <input type="radio" id="a-positive" name="bloodType" value="A+">  </td> 
+      <td>  <label for="a-positive">A+</label> </td> </tr>
+    <tr> <td>  <input type="radio" id="a-negative" name="bloodType" value="A-">  </td>
+     <td>   <label for="a-negative">A-</label>   </td> </tr>
+    <tr> <td>  <input type="radio" id="b-positive" name="bloodType" value="B+">  </td>
+      <td>  <label for="b-positive">B+</label>   </td> </tr>
+    <tr> <td>  <input type="radio" id="b-negative" name="bloodType" value="B-">  </td>
+      <td>  <label for="b-negative">B-</label>   </td> </tr>
+    <tr> <td>  <input type="radio" id="a-positive" name="bloodType" value="A+">  </td>
+      <td>  <label for="a-positive">O+</label>   </td> </tr>
+    <tr> <td>  <input type="radio" id="a-negative" name="bloodType" value="A-">  </td>
+      <td>  <label for="a-negative">O-</label>   </td> </tr>
+    <tr> <td>  <input type="radio" id="b-positive" name="bloodType" value="B+">  </td>
+      <td>  <label for="b-positive">AB+</label>  </td> </tr>
+    <tr> <td>  <input type="radio" id="b-negative" name="bloodType" value="B-">  </td>
+      <td>  <label for="b-negative">AB-</label>  </td> </tr>
+  </table>
+  <br><br>
+   
+    <label for="gender"><b>Select Your Gender:</b></label>
+  <table class="gender">
+    <tr> <td>   <input type="radio" id="male" name="gender" value="Male">  </td>
+    <td> <label for="male">Male</label> </td> </tr>
+    
+    <tr> <td>   <input type="radio" id="female" name="gender" value="Female">   </td>
+    <td> <label for="female">Female</label> </td> </tr>
+    
+    <tr> <td>   <input type="radio" id="other" name="gender" value="Other">   </td>
+    <td> <label for="other">Other</label> </td> </tr>
+  </table> <br><br>
+
+    <label for="phnum"><b>Phone Number</b></label><br>
+    <input type="int" placeholder="Phone Number" name="phnum" id="phnum" required><br>
+
+    <label for="email"><b>Email</b></label><br>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required><br>
+
+    <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br>
+
+    <label for="add"><b>Address</b></label><br>
+    <input type="text" placeholder="Street Address" name="add" id="add" required>
+    <input type="text" placeholder="City" name="add" id="add" required>
+    <input type="text" placeholder="State" name="add" id="add" required>
+    <input type="text" placeholder="Pin Code" name="add" id="add" required><br>
+
+    <label for="weight"><b>Weight</b></label><br>
+    <input type="int" placeholder="Weight (in kg)" name="weight" id="weight" required><br>
+
+    <label for="pulse"><b>Pulse</b></label><br>
+    <input type="int" placeholder="Enter Pulse Rate" name="pulse" id="pulse" required><br>
+
+    <label for="hb"><b>HB</b></label><br>
+    <input type="int" placeholder="HB" name="hb" id="hb" required><br>
+
+    <label for="bp"><b>BP</b></label><br>
+    <input type="int" placeholder="BP" name="bp" id="bp" required><br>
+
+    <label for="prev"><b>Have you donated blood previously?</b></label>
+  <table class="prev">
+    <tr> <td>   <input type="radio" id="yes" name="pre" value="Yes">   </td>
+    <td>   <label for="yes">Yes</label>   </td></tr>
+    
+    <tr> <td>   <input type="radio" id="no" name="prev" value="No">   </td>
+    <td>   <label for="No">No</label>    </td></tr>
+  </table><br>
+
+    <label for="prev"><b>In the last six months have you had any of the following?</b></label><br>
+    <input type="checkbox" id="tatooing" name="tatooing" value="tatooing">
+    <label for="tatooing">Tatooing</label><br>
+    <input type="checkbox" id="ear" name="ear" value="ear">
+    <label for="ear"> Ear Piercing</label><br>
+    <input type="checkbox" id="dental" name="dental" value="dental">
+    <label for="dental"> Dental Extraction</label><br><br>
+    
+    <label for="prev"><b>Do you suffer from or have suffered from any of the following diseases?</b></label><br>
+    <input type="checkbox" id="heart" name="heart" value="heart">
+    <label for="heart">Heart Diseases</label><br>
+    <input type="checkbox" id="cancer" name="cancer" value="cancer">
+    <label for="cancer"> Cancer</label><br>
+    <input type="checkbox" id="typhoid" name="typhoid" value="typhoid">
+    <label for="typhoid"> Typhoid</label><br>
+    <input type="checkbox" id="lung" name="lung" value="lung">
+    <label for="lung"> Lung Diseases</label><br>
+    <input type="checkbox" id="kidney" name="kidney" value="kidney">
+    <label for="kidney"> Kidney Diseases</label><br>
+    <input type="checkbox" id="diabetes" name="diabetes" value="diabetes">
+    <label for="diabetes"> Diabetes</label><br>
+    <input type="checkbox" id="other" name="other" value="other">
+    <label for="other"> Other</label><br><br>
+
+    <label for="prev"><b>Is there any history of surgery or blood transfusion in the past six months?</b></label><br>
+    <input type="checkbox" id="major" name="major" value="major">
+    <label for="major">Major</label><br>
+    <input type="checkbox" id="minor" name="minor" value="minor">
+    <label for="minor">Minor</label><br>
+    <input type="checkbox" id="blood" name="blood" value="blood">
+    <label for="blood">Blood Transfusion</label><br><br>
+
+    <hr>
+    <button type="register" class="registerbtn">Register</button>
+  </div>
+  
+</form>
+
+</body>
+</html>
