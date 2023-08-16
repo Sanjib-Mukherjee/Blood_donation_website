@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ PAGE</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 0;  
+            background-color: #FFD1DA;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .faq-heading{
+    border-bottom: #777;
+    padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.hr-line{
+  width: 60%;
+  margin: auto;
+  }
+.faq-page {
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+}
+.faq-body{
+    margin: auto;
+   width: 50%; 
+   padding: auto;
+   }
+
+.faq-body {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #F31559;
+    float: right;
+    margin-left: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="faq-heading" style="color: red;">FAQ'S</h1>
+        <hr>
+        <section class="faq-container">
+            <div class="faq-one">
+                <h3 class="faq-page">Who can donate blood?</h3>
+                <div class="faq-body">
+                    <p><b> Most healthy individuals aged 18 to 65, who weigh at least 50 kg (110 lbs), and meet certain health criteria are eligible to donate blood. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-two">
+                <h3 class="faq-page">Is it safe to donate blood?</h3>
+                <div class="faq-body">
+                    <p><b> Yes, donating blood is generally safe. We follow strict procedures to ensure the safety of both donors and recipients. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-three">
+                <h3 class="faq-page">How often can I donate blood?</h3>
+                <div class="faq-body">
+                    <p><b> For whole blood donations, you can typically donate every 8 weeks (56 days). </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-four">
+                <h3 class="faq-page">What should I do before donating blood?</h3>
+                <div class="faq-body">
+                    <p><b> To prepare for a blood donation, ensure you are well-hydrated, have eaten a light meal, and had enough rest. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-five">
+                <h3 class="faq-page">Does donating blood hurt?</h3>
+                <div class="faq-body">
+                    <p><b> The pain associated with blood donation is usually minimal. You may feel a slight pinch when the needle is inserted, but discomfort is generally brief and manageable. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-six">
+                <h3 class="faq-page">How long does the blood donation process take?</h3>
+                <div class="faq-body">
+                    <p><b> The entire donation process, including registration, medical screening, and actual donation, usually takes about 30 to 60 minutes.</b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-seven">
+                <h3 class="faq-page">Can I donate if I have recently traveled or received a vaccine?</h3>
+                <div class="faq-body">
+                    <p><b> Travel or recent vaccination may affect your eligibility temporarily. Depending on the destination and vaccine received, there may be deferral periods. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-eight">
+                <h3 class="faq-page">What happens to my donated blood?</h3>
+                <div class="faq-body">
+                    <p><b> After donation, your blood goes through a series of tests to ensure it is safe for transfusion. Once cleared, it is stored and ready to be used for patients in need. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-nine">
+                <h3 class="faq-page">Can I donate blood if I have a cold or flu?</h3>
+                <div class="faq-body">
+                    <p><b> If you have an active infection, including a cold or flu, you should wait until you have fully recovered before donating blood.  </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-ten">
+                <h3 class="faq-page">Can I donate blood during my menstrual period?</h3>
+                <div class="faq-body">
+                    <p><b> Yes, you can donate blood during your menstrual period if you feel healthy and meet all other eligibility criteria. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-eleven">
+                <h3 class="faq-page">How to login to the website?</h3>
+                <div class="faq-body">
+                    <p><b> If you are already signed up to the website or already have an account then simply click on the login portal and enter the details for further. </b></p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-twelve">
+                <h3 class="faq-page">How to contact to the admins?</h3>
+                <div class="faq-body">
+                    <p><b> Simply hover down to the website there you will get the names and further details of the admins to contact. </b></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+    <script>
+        var faq = document.getElementsByClassName("faq-page");
+        var i;
+        for (i = 0; i < faq.length; i++) {
+            faq[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var body = this.nextElementSibling;
+                if (body.style.display === "block") {
+                    body.style.display = "none";
+                } else {
+                    body.style.display = "block";
+                }
+            });
+        }
+    </script>
+</html>
