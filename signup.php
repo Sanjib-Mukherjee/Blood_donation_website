@@ -21,8 +21,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "Username already exists";
 } else {
     if($pass==$c_pass){
-    // Make sure to hash the password before inserting it into the database
-    //$hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
     // Do not store the confirm_password in the database
     // Only store the hashed password
