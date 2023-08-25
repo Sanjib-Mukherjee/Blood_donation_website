@@ -23,7 +23,6 @@ if (mysqli_num_rows($result) > 0) {
     if($pass==$c_pass){
 
     // Do not store the confirm_password in the database
-    // Only store the hashed password
  
     $sql = "INSERT INTO sign_up (name, password) VALUES ('$name', '$pass')";
 
