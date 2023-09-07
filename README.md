@@ -1,7 +1,5 @@
 # Blood Donation Website
 
-![Blood Donation Website Logo](path/to/your/logo.png)
-
 ## Project Description
 
 The **Blood Donation Website** is a minor project developed by a team of talented individuals: Anindita Gope, Konkana Tapadar, Priti Sikdar, Priyanka Garai, and Sanjib Mukherjee. This website aims to facilitate the process of blood donation and connect donors with those in need. It provides a platform for blood donors to register, search for donation camps, and schedule appointments. Additionally, recipients can request blood donations through the website.
