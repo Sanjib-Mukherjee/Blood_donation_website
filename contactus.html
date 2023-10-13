@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap" rel="stylesheet">
+<title>Query and Comments Page</title>
+<style>
+  body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgba(4,9,30,1),rgba(241, 49, 49,0.4)),url(banner.jpg);
+    height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+  
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  h1 {
+    color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    max-width: 500px;
+    margin: auto;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+  border: 3px solid #f1f1f1;
+  }
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input[type="submit"] {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+  input[type="submit"]:hover {
+    border: 1px solid #df1f2c;
+    background: #df1f2c;
+    transition: 0.5s;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Leave a Query or Comment</h1>
+  <form action="#" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
