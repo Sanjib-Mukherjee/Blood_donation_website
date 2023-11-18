@@ -14,18 +14,26 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql= "select * from sign_up where name='$username' and password='$password'";
-    $result=mysqli_query($conn,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $count=mysqli_num_rows($result);
-    if ($count==1){
-        echo"you are logged in";
-    }
-    else{
-        echo"not matched";
-    
+    $sql = "SELECT password FROM user WHERE name=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        $hashedPassInDB = $row['password'];
+
+
+        if (password_verify($password, $hashedPassInDB)) {
+            echo "You are logged in";
+        } else {
+            echo "Username and password do not match";
+        }
+    } else {
+        echo "User not found";
     }
 
+    mysqli_stmt_close($stmt);
 }
 
 ?>
@@ -71,7 +79,7 @@ if(isset($_POST['submit'])){
                 <button type="submit" class="btn" name="submit">Login</button>
 
                 <div class="login_register">
-                    <p>Don't have an Account? <a href="signup.php" 
+                    <p>Don't have an Account? <a href="signup_user.php" 
                     class="signup_link">SignUp</a></p>
                 </div>
 
