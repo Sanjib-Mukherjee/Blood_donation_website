@@ -15,27 +15,45 @@ if(isset($_POST['submit'])){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    if($pass==$c_pass){
-    // Make sure to hash the password before inserting it into the database
-    $hashedPass = password_hash($pass, PASSWORD_DEFAULT );
-
-    // Do not store the confirm_password in the database
-    // Only store the hashed password
+    if (strlen($pass) === 8) {
+        // Password meets the required length criteria
+        // Proceed with the rest of your code
+        if($pass==$c_pass){
+            // Make sure to hash the password before inserting it into the database
+            $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
+        
+            // Do not store the confirm_password in the database
+            // Only store the hashed password
+        
  
     $sql = "INSERT INTO admin (name,id,password) VALUES ('$name','$id','$hashedPass')";
-
+ 
     if (mysqli_query($conn, $sql)) {
         echo "Registration successful!";
+        header("Location: welcome_v2.html"); // Redirect after successful registration
+        exit(); // Ensure that the script stops executing after redirection
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+    } 
 
-    mysqli_close($conn);
+    else {
+        echo '<script>';
+        echo 'alert("enter correct password");'; // Display an alert popup
+        echo '</script>';
+    }
+
+mysqli_close($conn);
 }
 else 
-echo "enter correct password";
+{
+    echo '<script>';
+    echo 'alert("Password must be 8 characters long.");'; // Display an alert popup
+    echo '</script>';
+}
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -185,13 +203,13 @@ echo "enter correct password";
 
                 <div class="inputbox">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="password">
-                    <label for="password">Password</label>
+                    <input type="password" id="password" required name="password">
+                    <label for="password">Password (Must be 8 characters)</label>
                 </div>
                 
                 <div class="inputbox">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="confirm_password" autocomplete="off" required>
+                    <input type="password" id="conpass" required name="confirm_password" autocomplete="off" required>
                     <label for="cpass">Confirm Password</label>
                 </div>
 
@@ -202,10 +220,10 @@ echo "enter correct password";
 
                 <button type="submit" class="btn" name="submit">SignUp</button>
 
-                <!-- <div class="login_register">
-                    <p>Don't have an Account? <a href="signup.php" 
-                    class="signup_link">SignUp</a></p>
-                </div> -->
+                 <div class="login_register">
+                    <p>Already have an Account? <a href="adminlogin.php" 
+                    class="signup_link">Login</a></p>
+                </div> 
 
             </form>
         </div>        
