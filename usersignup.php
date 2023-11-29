@@ -15,25 +15,42 @@ if(isset($_POST['submit'])){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    if($pass==$c_pass){
-    // Make sure to hash the password before inserting it into the database
-    $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
-
-    // Do not store the confirm_password in the database
-    // Only store the hashed password
-
-    $sql = "INSERT INTO user (name,email,password) VALUES ('$name','$email','$hashedPass')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "Registration successful!";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    if (strlen($pass) === 8) {
+        // Password meets the required length criteria
+        // Proceed with the rest of your code
+        if($pass==$c_pass){
+            // Make sure to hash the password before inserting it into the database
+            $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
+        
+            // Do not store the confirm_password in the database
+            // Only store the hashed password
+        
+            $sql = "INSERT INTO user (name,email,password) VALUES ('$name','$email','$hashedPass')";
+        
+            
+            if (mysqli_query($conn, $sql)) {
+                echo "Registration successful!";
+                header("Location: home.php"); // Redirect after successful registration
+                exit(); // Ensure that the script stops executing after redirection
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+            } 
+        
+            else  {
+                echo '<script>';
+                echo 'alert("enter correct password");'; // Display an alert popup
+                echo '</script>';
+            }
+        
+        mysqli_close($conn);
     }
-
-    mysqli_close($conn);
-}
-else 
-echo "enter correct password";
+        else 
+        {
+            echo '<script>';
+            echo 'alert("Password must be 8 characters long.");'; // Display an alert popup
+            echo '</script>';
+        }
 }
 ?>
 
@@ -66,19 +83,19 @@ echo "enter correct password";
 
                 <div class="inputbox">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="text" required name="email" autocomplete="off" required>
+                    <input type="email" required name="email" autocomplete="off" required>
                     <label for="email">Email</label>
                 </div>
 
                 <div class="inputbox">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="password" autocomplete="off" required>
-                    <label for="password">Password</label>
+                    <input type="password" id="password" required name="password" autocomplete="off" required>
+                    <label for="password" title="8 char">Password (Must be 8 characters)</label>
                 </div>
 
                 <div class="inputbox">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="confirm_password" autocomplete="off" required>
+                    <input type="password" id="conpass" required name="confirm_password" autocomplete="off" required>
                     <label for="cpass">Confirm Password</label>
                 </div>
 
